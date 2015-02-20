@@ -1,0 +1,13 @@
+# WWW
+
+RewriteEngine on
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^btcbrdev\.com.br$ [NC]
+RewriteRule (.*) http://www.btcbrdev.com.br/$1 [L,R=301]
+
+# Sem a extensao .PHP
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*)$ $1.php
